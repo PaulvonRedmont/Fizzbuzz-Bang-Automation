@@ -39,7 +39,21 @@ def check_number(n):
     
     return results
 
-# Example usage
-number = 44 #insert number here
-result = check_number(number)
-print(f"{number}: {' '.join(result)}")
+def main():
+    choice = input("Choose 'single' for one number or 'range' for a range of numbers: ").strip().lower()
+
+    if choice == 'single':
+        number = int(input("Enter the number: ").strip())
+        result = check_number(number)
+        print(f"{number}: {' '.join(result)}")
+    elif choice == 'range':
+        start = int(input("Enter the start of the range: ").strip())
+        end = int(input("Enter the end of the range: ").strip())
+        for number in range(start, end + 1):
+            result = check_number(number)
+            print(f"{number}: {' '.join(result)}")
+    else:
+        print("Invalid choice. Please choose 'single' or 'range'.")
+
+if __name__ == "__main__":
+    main()
