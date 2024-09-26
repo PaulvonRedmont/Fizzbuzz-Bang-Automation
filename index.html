@@ -1,1 +1,30 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Checker</title>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Number Checker</h1>
+    <label for="choice">Choose 'single' for one number or 'range' for a range of numbers:</label>
+    <select id="choice">
+        <option value="single">Single</option>
+        <option value="range">Range</option>
+    </select>
+    <div id="single-input" style="display: none;">
+        <label for="single-number">Enter the number:</label>
+        <input type="number" id="single-number">
+        <button onclick="checkSingleNumber()">Check</button>
+    </div>
+    <div id="range-input" style="display: none;">
+        <label for="start-number">Enter the start of the range:</label>
+        <input type="number" id="start-number">
+        <label for="end-number">Enter the end of the range:</label>
+        <input type="number" id="end-number">
+        <button onclick="checkRange()">Check</button>
+    </div>
+    <div id="results"></div>
+</body>
+</html>
