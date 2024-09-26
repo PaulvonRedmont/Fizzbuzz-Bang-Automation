@@ -35,4 +35,25 @@ function checkNumber(n) {
     if (n.toString().endsWith('5')) results.push("pow");
     if (isPalindrome(n)) results.push("wow");
     if (isPerfectSquare(n)) results.push("boom");
-    if (sumOfDigits(n) ===
+    if (sumOfDigits(n) === 10) results.push("snap");
+    if (n % 2 === 0) results.push("tick");
+
+    return results;
+}
+
+function checkSingleNumber() {
+    const number = parseInt(document.getElementById('single-number').value);
+    const result = checkNumber(number);
+    document.getElementById('results').innerText = `${number}: ${result.join(' ')}`;
+}
+
+function checkRange() {
+    const start = parseInt(document.getElementById('start-number').value);
+    const end = parseInt(document.getElementById('end-number').value);
+    let results = '';
+    for (let number = start; number <= end; number++) {
+        const result = checkNumber(number);
+        results += `${number}: ${result.join(' ')}\n`;
+    }
+    document.getElementById('results').innerText = results;
+}
